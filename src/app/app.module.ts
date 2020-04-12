@@ -33,12 +33,14 @@ import { MainDashboardComponent } from './main-dashboard/main-dashboard.componen
 import { MainPageComponent } from './main-page/main-page.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainDashboardComponent,
-    MainPageComponent
+    MainPageComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

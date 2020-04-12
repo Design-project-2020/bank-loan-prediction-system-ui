@@ -78,8 +78,11 @@
           <ng-template matStepLabel>Done</ng-template>
           <p>You are now done.</p>
           <div>
+         
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button (click)="stepper.reset()">Reset</button>
+            <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            <button mat-button (click)="goforPrediction()">Go for PREDICTION</button>
           </div>
         </mat-step>
       </mat-horizontal-stepper>
