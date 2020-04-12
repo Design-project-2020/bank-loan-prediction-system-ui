@@ -1,0 +1,17 @@
+.example-container {
+    width: 100%;
+    height: 100%;
+    margin: 10px;
+   
+  }
+  mat-icon {
+    float: right;
+    margin-right: 10px;
+  }
+  
+  .icon {
+    position: relative;
+    top: 14px;
+    right: -10px;
+    z-index: 9999;
+  }
