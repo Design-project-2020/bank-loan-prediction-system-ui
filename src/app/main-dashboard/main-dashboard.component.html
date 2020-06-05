@@ -1,33 +1,32 @@
 <mat-drawer-container class="example-container">
      <mat-drawer mode="side" opened style="padding: 10px;">
+<div style="padding-left: 50px;"><mat-icon >android</mat-icon></div>    
         <mat-list>
+          <mat-list-item></mat-list-item>
+             <mat-divider></mat-divider>
+            <mat-list-item>  <button mat-menu-item>NEW APPLICATION</button></mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item>  <button mat-menu-item>Log out</button></mat-list-item>
+            <mat-list-item> <button (click)="searchApplication()" mat-menu-item>SEARCH APPLICATION</button></mat-list-item>
             <mat-divider></mat-divider>
-            <mat-list-item> <button mat-menu-item>log into another account</button></mat-list-item>
-            <mat-divider></mat-divider>
-            <mat-list-item> <button mat-menu-item>log into another account</button></mat-list-item>
+            <!-- <mat-list-item> <button mat-menu-item>log into another account</button></mat-list-item> -->
           </mat-list>
-        
-          
-           
-     
     </mat-drawer>
   
     <mat-drawer-content style="padding: 10px;">
        <!-- <button mat-button [matMenuTriggerFor]="menu" style="margin-left: 90%;"><mat-icon>account_circle</mat-icon></button> -->
   
-       <mat-toolbar >My App
+       <mat-toolbar >LOAN PREDICTION SYSTEM
        <mat-icon  [matMenuTriggerFor]="menu" style="margin-left: 90%;">account_circle</mat-icon>
         <mat-menu #menu="matMenu" [overlapTrigger]="false">
-           <button mat-menu-item>Log out</button>
+           <button mat-menu-item routerLink="/">Log out</button>
            <button mat-menu-item>log into another account</button>
         </mat-menu>
     </mat-toolbar>
+    
     <!-- <button mat-raised-button (click)="isEditable = !isEditable">
         {{!isEditable ? 'Enable edit mode' : 'Disable edit mode'}}
       </button> -->
-      
+      <div *ngIf=!showSearchApplication>
       <mat-horizontal-stepper linear #stepper>
         <mat-step [stepControl]="firstFormGroup" [editable]="isEditable">
           <form [formGroup]="firstFormGroup" >
@@ -43,7 +42,7 @@
 
             <mat-form-field  appearance="outline">
                 <mat-label>ID Number</mat-label>
-                <input matInput  required>
+                <input matInput required>
               </mat-form-field>
 
               <mat-form-field  appearance="outline">
@@ -62,6 +61,7 @@
         
         <mat-step [stepControl]="secondFormGroup" [editable]="isEditable">
           <form [formGroup]="secondFormGroup">
+            <div fxLayout="column" fxFlex="60%" fxLayoutGap="0px" style = "padding-top: 20px;">
             <ng-template matStepLabel>Fill out your address</ng-template>
             <mat-form-field>
               <mat-label>Address</mat-label>
@@ -71,6 +71,7 @@
             <div>
               <button mat-button matStepperPrevious>Back</button>
               <button mat-button matStepperNext>Next</button>
+            </div>
             </div>
           </form>
         </mat-step>
@@ -86,7 +87,23 @@
           </div>
         </mat-step>
       </mat-horizontal-stepper>
+    </div>
+
+<div *ngIf=showSearchApplication>
+  <div fxLayout="row" fxFlex="80%" fxLayout.xs="column" fxLayoutGap="10px" fxLayoutAlign="space-evenly start">
+    <div fxFlex="40%">
+      <mat-form-field  style="width:80%">
+        <mat-label>search application <mat-icon style="margin-top: 20px;">search</mat-icon></mat-label> 
+        <input matInput required>
+      </mat-form-field>  
+     <mat-icon style="margin-top: 20px;" (click)="findApplication()">search</mat-icon> 
+    </div>
+  
       
+  
+
+    </div>
+</div>
 
     </mat-drawer-content>
   </mat-drawer-container>

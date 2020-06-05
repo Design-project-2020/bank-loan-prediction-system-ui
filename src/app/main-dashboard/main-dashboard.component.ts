@@ -12,6 +12,7 @@ export class MainDashboardComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   isEditable = true;
+  showSearchApplication = false;
 
   shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
   constructor(private _formBuilder: FormBuilder,private dialog: MatDialog,)  { }
@@ -36,6 +37,17 @@ goforPrediction(){
     }).afterClosed().subscribe(()=>{
 this.ngOnInit();
     })
+  }
+
+
+  searchApplication(){
+    this.showSearchApplication = true;
+
+console.log("search");
+  }
+
+  findApplication(){
+    console.log("findApplication")
   }
 }
 

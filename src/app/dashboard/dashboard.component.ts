@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from '../canvasjs-2.3.2/canvasjs.min.js';
+import { MatDialogRef } from '@angular/material/dialog';
+import { MainDashboardComponent } from '../main-dashboard/main-dashboard.component.js';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +10,7 @@ import * as CanvasJS from '../canvasjs-2.3.2/canvasjs.min.js';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor( public dialogRef: MatDialogRef<MainDashboardComponent>) { }
 
   ngOnInit() {
     let chart = new CanvasJS.Chart("chartContainer", {
@@ -36,5 +38,9 @@ export class DashboardComponent implements OnInit {
     });
       
     chart.render();
+      }
+
+      onCancelClick(){
+        this.dialogRef.close();
       }
   }
