@@ -34,13 +34,15 @@ import { MainPageComponent } from './main-page/main-page.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminModuleComponent } from './admin-module/admin-module.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainDashboardComponent,
     MainPageComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdminModuleComponent
   ],
   imports: [
     BrowserModule,

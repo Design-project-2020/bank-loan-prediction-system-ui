@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { DashboardComponent } from '../dashboard/dashboard.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
   selector: 'app-main-dashboard',
@@ -13,6 +13,7 @@ export class MainDashboardComponent implements OnInit {
   secondFormGroup: FormGroup;
   isEditable = true;
   showSearchApplication = false;
+  showProgressBar = false;
 
   shouldRun = [/(^|\.)plnkr\.co$/, /(^|\.)stackblitz\.io$/].some(h => h.test(window.location.host));
   constructor(private _formBuilder: FormBuilder,private dialog: MatDialog,)  { }
@@ -42,14 +43,19 @@ this.ngOnInit();
 
   searchApplication(){
     this.showSearchApplication = true;
+console.log("search");
+  }
 
+  newApplication(){
+    this.showSearchApplication = false;
 console.log("search");
   }
 
   findApplication(){
+    this.showProgressBar = true;
     console.log("findApplication")
+    
+
   }
+  
 }
-
-
-
