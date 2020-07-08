@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fir-connection-a46ce": {
+      "hosting": {
+        "bank-loan-prediction-system-ui": [
+          "fir-connection-a46ce"
+        ]
+      }
+    }
+  }
+}

@@ -5,21 +5,34 @@
   <mat-tab-group  style="background-color:white;opacity: 0.85;padding: 30px;">
     <mat-tab label="User Login" > 
       <div fxLayout="column" fxFlex="95%" fxLayoutGap="0px" style = "padding-top: 20px;">
-        <mat-form-field appearance="outline">
+        <!-- <mat-form-field appearance="outline" [(ngModel)]="emailInput"
+        id="email" placeholder="Email">
           <mat-label>User Name</mat-label>
           <input autocomplete="off" matInput name="ifmsUserId" required >
         </mat-form-field>
       
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline"   [(ngModel)]="passwordInput" id="password" placeholder="Password">
           <mat-label>Password</mat-label>
           <input autocomplete="off" matInput name="ifmsUserId" required>
-        </mat-form-field>
+        </mat-form-field> -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" [(ngModel)]="emailInput"
+            id="email" placeholder="Email">
+        </div>
+        <div class="form-group" >
+          <label for="password">Password</label>
+          <input type="password" class="form-control"
+            [(ngModel)]="passwordInput" id="password" placeholder="Password">
+        </div>
       </div>
   
       <div fxLayout="row" class="actions mat-card-actions">
-        <button mat-flat-button color="primary" routerLink="/dashboard"> LOG IN
+        <!-- <button mat-flat-button color="primary" routerLink="/dashboard"> LOG IN
+           </button> -->
+           <button mat-flat-button color="primary" (click)="loginUser()"> LOG IN
            </button>
-           <button mat-flat-button color="primary" > SIGN IN
+           <button mat-flat-button color="primary" (click)="registerUser()"> SIGN IN
           </button>
       </div>
   

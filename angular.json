@@ -119,6 +119,10 @@
               "devServerTarget": "bank-loan-prediction-system-ui:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }

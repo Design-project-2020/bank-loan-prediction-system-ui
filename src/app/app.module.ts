@@ -27,7 +27,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { RouterModule } from '@angular/router';
 import { MainDashboardComponent } from './main-dashboard/main-dashboard.component';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -35,6 +36,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminModuleComponent } from './admin-module/admin-module.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,10 @@ import { AdminModuleComponent } from './admin-module/admin-module.component';
       HttpClientModule,
       RouterModule,
       FlexLayoutModule,
+      AppRoutingModule,
+      AngularFireModule.initializeApp(environment.firebaseConfig),
+      AngularFirestoreModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
